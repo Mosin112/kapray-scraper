@@ -20,6 +20,7 @@ Safe to re-run any time, as often as you like:
 - Output files are timestamped (`drops/nishat/20260712-140501.json`) — nothing is overwritten. `drops/{brand}/latest.json` always points to the newest snapshot.
 - If a brand's catalog hasn't changed since the last run, **no new drop file is written** (so the ingest pipeline stays quiet). Force one anyway with `--force`.
 - State lives in `state/state.json`; delete it to reset everything.
+- `drops/`, `state/` and `scraper.log` are created on first run and are git-ignored, so a fresh clone starts clean.
 - Unattended re-runs: `python3 scraper.py loop --interval 30` (every 30 min), or cron:
 
 ```cron
